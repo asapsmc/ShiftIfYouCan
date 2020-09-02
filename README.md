@@ -11,17 +11,21 @@ The library can be imported with `...`.
 
 ## Dependencies:
 
-* Scipy/Numpy
+* Numpy
 
 ## Example Code
 
-A detailed example on how to use the TIV.lib is available in [ShiftIfYouCan_example.ipynb](ShiftIfYouCan_example.ipynb).
+Two detailed examples on how to use this code are provided: 
+*
+* [ShiftIfYouCan_notebook.ipynb](ShiftIfYouCan_notebook.ipynb) where we present a walkthrough example for the ShiftIfYouCan visualisation code;
+*  [example_script.py](example_script.py): this script provides an example of how to create a list of variations of beat detections,
+and process it with the corresponding ground-truth annotation. It saves the transformed beat detections, as well as all the corresponding 
+visualisation plots as *.png files in the /figures/ folder.
+For each of the variations, it calculates the following:
+     * annotation efficiency;
+     * f-measure;
+     * transformed beat detections and corresponding f-measure;
 
-### 3rd Party Code
-
-On the examples provided we used and/or adapted the following two external functions, which can be found along all relevant information in the module *ext_libraries.py*.
-- **variations**, that provides variations of a given beat sequence; 
-- **f-measure**, that provides the f-measure of a given pair of beat detections and annotations.
 
 ## Authors
 

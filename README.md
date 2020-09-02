@@ -6,8 +6,8 @@ We provide a straightforward calculation of *annotation efficiency* based on cou
 ## Installation and Usage
 
 To use this library, the user should first clone this repository to the working python directory.
-
-The library can be imported with `...`.
+Check the Example Code.
+**Go to Example Code**
 
 ## Dependencies:
 

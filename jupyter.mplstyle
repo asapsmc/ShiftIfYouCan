@@ -1,0 +1,21 @@
+# Defaults for Jupyter Matplotlib
+
+# AXES
+# Seaborn colorblind palette
+axes.prop_cycle: cycler('color', ['0072B2', '009E73', 'D55E00', 'CC79A7', 'F0E442', '56B4E9'])
+axes.labelsize: medium
+
+xtick.labelsize:     small  # fontsize of the tick labels
+
+# LINES
+lines.linewidth : 1
+
+
+# LEGEND
+legend.shadow: True
+legend.fontsize: small
+
+# FIGURE OUTPUT 
+figure.dpi : 150
+savefig.dpi : 200
+

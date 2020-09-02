@@ -5,8 +5,8 @@ We provide a straightforward calculation of *annotation efficiency* based on cou
 
 ## Installation and Usage
 
-To use this library, the user should first clone this repository to the working python directory.
-Check the Example Code.
+To use this library, the user should first clone this repository to the working python directory, and make sure the following dependencies are satisfied within your environment.
+Please check the **Example Code** section for usage scenarios.
 
 ## Dependencies
 In parenthesis we refer the versions with which this code was tested.

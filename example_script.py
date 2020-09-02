@@ -14,10 +14,10 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 
-from ext_libraries import f_measure, variations
+from modules.ext_libraries import f_measure, variations
 
-from operating import operation_count, process_operations, get_summary
-from plotting import plot_operations
+from modules.operating import operation_count, process_operations, get_summary
+from modules.plotting import plot_operations
 
 # Load beat detections and annotations
 dets_file = 'dets'

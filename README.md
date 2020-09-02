@@ -33,4 +33,3 @@ António Sá Pinto
 antoniosapinto@gmail.com
 
 Matthew E. P. Davies
-mepdavies@gmail.com

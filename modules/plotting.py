@@ -298,8 +298,11 @@ def plot_operations(operations, annotations, title='', inn_tol_win=0.07, out_tol
 
     detections, insertions, deletions, shift_result, un_shifted, idx_shifts, idx_insertions,\
         idx_deletions = detail_operations(operations)
-
     idx_shifts_per_annotation = get_shift_indices_from_annotations(annotations, shift_result)
+
+    # initialize upper LineCollection
+    lines_upper = [annotations]
+    labels_upper = ['Annotations']
 
     # draw the SID (Shift, Insert, Delete) labels
     if D_SID:
@@ -308,24 +311,24 @@ def plot_operations(operations, annotations, title='', inn_tol_win=0.07, out_tol
     # draw the inner tolerance window
     if D_INN_WIN:
         draw_inner_tolerance_window(ax_upper, annotations, inn_tol_win)
-    # FIXME:
-    # inner tolerance patch for legend
-    inner_tolerance_patch = patches.Patch(facecolor=col_dict.get('Annotations'), edgecolor='None', alpha=0.3)
+        inner_tolerance_patch = patches.Patch(facecolor=col_dict.get('Annotations'), edgecolor='None', alpha=0.3)
+        lines_upper.append(inner_tolerance_patch)
+        labels_upper.append(f'Inner tol. win.:$\\pm${inn_tol_win}s')
 
     # draw the outer tolerance window (for shifts)
     if D_OUT_WIN:
         draw_outer_tolerance_window(ax_upper, annotations, idx_shifts_per_annotation, out_tol_win)
-    # FIXME:
-    # outer tolerance patch for legend
-    outer_tolerance_patch = patches.Patch(facecolor=col_dict.get('Shifts'), edgecolor='None', alpha=0.3)
+        outer_tolerance_patch = patches.Patch(facecolor=col_dict.get('Shifts'), edgecolor='None', alpha=0.3)
+        lines_upper.append(outer_tolerance_patch)
+        labels_upper.append(f'Outer tol. win.:$\\pm${out_tol_win}s')
 
-    # add Line Collections
-    lines_positive = [annotations, inner_tolerance_patch, outer_tolerance_patch]
-    lines_negative = [detections, insertions, deletions, (un_shifted, shift_result)]
-    labels_upper = ['Annotations', f'Inner tol. win.:$\\pm${inn_tol_win}s', f'Outer tol. win.:$\\pm${out_tol_win}s']
+    # initialise lower Line Collections
+    lines_lower = [detections, insertions, deletions, (un_shifted, shift_result)]
     labels_lower = ['Detections', 'Insertions', 'Deletions', 'Shifts']
+
+    # add LineCollections
     lines_upper, lines_lower = add_line_collections(
-        ax_upper, ax_lower, labels_upper, labels_lower, lines_positive, lines_negative)
+        ax_upper, ax_lower, labels_upper, labels_lower, lines_upper, lines_lower)
 
     if D_LEGEND:
         if plot_type == 'subplots':

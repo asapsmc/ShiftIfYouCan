@@ -14,7 +14,7 @@ def get_summary(type_var, ann_eff, tup_f_m=(0.0, 1.0)):
         f'{type_var:10s}\n'
         '- - - - - - - - - - - - - - - - -\n'
         f'annotation_efficiency: {ann_eff[0]:.3f}\n'
-        f'  # (correct) detections: {ann_eff[1]:.0f}\n'
+        f'  # "good" detections: {ann_eff[1]:.0f}\n'
         f'  # insertions: {ann_eff[2]:.0f}\n'
         f'  # deletions: {ann_eff[3]:.0f}\n'
         f'  # shifts: {ann_eff[4]:.0f}\n'
